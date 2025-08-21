@@ -1,5 +1,39 @@
 package cms.user;
 
-public class User {
+public abstract class User {
+	private final int id;
+	private final String nome;
+	private final String email;
+	private final String password;
 
+	public User(int id, String nome, String email, String password) {
+
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.password = password;
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public boolean checkPassword(String p) {
+		return password.equals(p);
+	}
+	
+	public abstract String getRole();
 }
